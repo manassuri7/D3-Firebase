@@ -28,7 +28,7 @@ console.log(data);
 //domain is the input value while range is the output
 //both domain and range r relative eg: 500 value in domain corresponds to 250 in range and 250 in domain =125 in range as o/p
      const y=d3.scaleLinear()//scaling on y axis
-          .domain([0,1000])//in our json max value is 900 so taking this to 1000
+          .domain([0,d3.max(data,d=>d.orders)])//in our json max value is 900 so taking this to 1000
     //instead of hard coding we can do this by using max/min      
       //    .domain([0,d3.max(data,d=>d.orders)])
           .range([graphHeight,0]);
